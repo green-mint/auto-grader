@@ -14,7 +14,7 @@ int main()
 
     printf("Diameter of the cicle is %f\n", 2 * radius);
     printf("Circumference of the cicle is %f\n", 2 * pi * radius);
-    printf("Area of the cicle is %f\n", pi * radius + radius);
+    printf("Area of the cicle is %f\n", pi * radius * radius);
 
     return 0;
 }
