@@ -53,9 +53,9 @@ def evaluate_code(testcases, code_src):
             print("")
 
 TOTAL_TASKS = 4
-TEST_PATH = "./Lab3"
-INPUTS_PATH = "./Lab3_inputs"
-CORRECT_PATH = "./Lab3_correct"
+TEST_PATH = "./Lab"
+INPUTS_PATH = "./Lab_inputs"
+CORRECT_PATH = "./Lab_correct"
 
 for num_task in range(1,TOTAL_TASKS + 1):
 
