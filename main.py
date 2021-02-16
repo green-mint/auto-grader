@@ -114,14 +114,14 @@ def evaluate_code(testcases: List[Dict[str, str]], code_src: str):
     executable, extension = os.path.splitext(code_src)
     compile_code(executable, code_src)
     for testcase in testcases:
-        print(f"Testing code for input: {testcase.get('input')}.....")
+        print(f"Testing code for input: '{testcase.get('input').decode().rstrip()}' .....")
         curr_output = run_code(executable, testcase.get('input'))
         if curr_output == testcase.get('output'):
             print("Success!")
             print("")
         else:
             print(
-                f"Failure!\nExpected Output: \n{testcase.get('output')}\nActual Output: \n{curr_output}")
+                f"Failure!\nExpected Output: \n{testcase.get('output').decode()}\nActual Output: \n{curr_output.decode()}")
             print("")
 
 
