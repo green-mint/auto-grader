@@ -1,4 +1,3 @@
-// Syed Asadullah Kashif (CMS: 333516) BSCS 10B
 
 #include <stdio.h>
 
