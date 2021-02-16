@@ -32,7 +32,7 @@ def main():
         evaluate_code(test_cases, lab_src)
 
 
-def compile_code(target: str, src: str) -> Tuple:
+def compile_code(target: str, src: str) -> tuple:
     """
     compile_code takes in @src (a .c source file), and compile it into
     a @target executable
@@ -114,7 +114,8 @@ def evaluate_code(testcases: List[Dict[str, str]], code_src: str):
     executable, extension = os.path.splitext(code_src)
     compile_code(executable, code_src)
     for testcase in testcases:
-        print(f"Testing code for input: '{testcase.get('input').decode().rstrip()}' .....")
+        print(
+            f"Testing code for input: '{testcase.get('input').decode().rstrip()}' .....")
         curr_output = run_code(executable, testcase.get('input'))
         if curr_output == testcase.get('output'):
             print("Success!")
