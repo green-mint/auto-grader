@@ -15,23 +15,21 @@ def main():
 
         # Getting the path of a file containing the testcases for the current lab question
         testf = os.path.join(TESTS_PATH, f"{num_task}.txt")
-        
+
         # Getting the path for the correct lab impl. for the current lab question
         correct_src = os.path.join(CORRECT_PATH, f"{num_task}.c")
         # Getting the path for the student's lab impl. for the current lab question
         lab_src = os.path.join(LAB_PATH, f"{num_task}.c")
 
-
-        # Generating the input, output pair from the correct impl. against the testcases 
+        # Generating the input, output pair from the correct impl. against the testcases
         # written in @testf
         test_cases = create_test_cases(testf, correct_src)
 
         print(f"\n\nTesting Task #{num_task}....\n")
-        
+
         # Here its checking the student's impl. for the correct lab task
         # by comparing it with the correct impl.
         evaluate_code(test_cases, lab_src)
-        
 
 
 def compile_code(target: str, src: str) -> Tuple:
@@ -123,7 +121,7 @@ def evaluate_code(testcases: List[Dict[str, str]], code_src: str):
             print("")
         else:
             print(
-                f"Failure!\nExpected Output: {testcase.get('output')}\nActual Output: {curr_output}")
+                f"Failure!\nExpected Output: \n{testcase.get('output')}\nActual Output: \n{curr_output}")
             print("")
 
 
